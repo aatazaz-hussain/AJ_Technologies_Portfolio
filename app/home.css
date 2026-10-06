@@ -1,3 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #030b18;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+main > *:first-child {
+  margin-top: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
 .home-page {
   overflow: hidden;
   background: #030b18;
@@ -23,7 +59,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 48px 0 34px;
+  padding: 0 0 34px;
   background:
     radial-gradient(circle at 78% 48%, rgba(8, 124, 255, 0.2), transparent 29%),
     radial-gradient(
@@ -134,14 +170,16 @@
   font-weight: 750;
 }
 
-.hero-content h1 span,
-.section-heading h2 span,
-.intro-main h2 span,
-.technology-layout h2 span,
-.projects-heading h2 span,
-.why-copy h2 span,
-.process-heading h2 span,
-.cta-content h2 span {
+.hero-content h1 > span > .reveal-line > span,
+.section-heading h2 > span > .reveal-line > span,
+.intro-main h2 > span > .reveal-line > span,
+.technology-layout h2 > span > .reveal-line > span,
+.projects-heading h2 > span > .reveal-line > span,
+.why-copy h2 > span > .reveal-line > span,
+.process-heading h2 > span > .reveal-line > span,
+.cta-content h2 > span > .reveal-line > span,
+.social-heading h2 > span > .reveal-line > span,
+.graphics-heading h2 > span > .reveal-line > span {
   color: #1684ff;
 }
 
@@ -1257,7 +1295,7 @@
   letter-spacing: -0.05em;
 }
 
-.social-heading h2 span {
+.social-heading h2 > span > .reveal-line > span {
   color: #1684ff;
 }
 
@@ -1867,12 +1905,13 @@
 }
 
 /* ============ MOTION ADDITIONS ============ */
-
 .home-page .reveal-mask {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.06em;
-  margin-bottom: -0.06em;
+  padding-top: 0.16em;
+  padding-bottom: 0.16em;
+  margin-top: -0.16em;
+  margin-bottom: -0.16em;
 }
 
 .home-page .reveal-line {
@@ -2656,7 +2695,7 @@
   letter-spacing: -0.05em;
 }
 
-.graphics-heading h2 span {
+.graphics-heading h2 > span > .reveal-line > span {
   color: #1684ff;
 }
 

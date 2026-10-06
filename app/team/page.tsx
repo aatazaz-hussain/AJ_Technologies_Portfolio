@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Sparkles, Crown, Compass, Cpu } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import "./team.css";
 
@@ -37,8 +37,6 @@ const team = [
     name: "Aqsa Fayyaz",
     role: "Chief Executive Officer",
     short: "CEO",
-    monogram: "A",
-    icon: Crown,
     line: "Leading the vision, direction and the AI journey behind AJ Technologies.",
   },
   {
@@ -46,8 +44,6 @@ const team = [
     name: "Javed Iqbal",
     role: "Director",
     short: "Director",
-    monogram: "J",
-    icon: Compass,
     line: "Guiding strategy, partnerships and the operational direction of the company.",
   },
   {
@@ -55,8 +51,6 @@ const team = [
     name: "Samiya Nazeer",
     role: "Chief Technology Officer",
     short: "CTO",
-    monogram: "S",
-    icon: Cpu,
     line: "Driving the technical architecture and engineering decisions across every project.",
   },
 ];
@@ -92,7 +86,7 @@ export default function Team() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    The people building
+                    <span>The people</span> building
                   </motion.span>
                 </span>
                 <span className="reveal-mask">
@@ -101,7 +95,7 @@ export default function Team() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    the <span>AI journey.</span>
+                    the AI journey.
                   </motion.span>
                 </span>
               </h1>
@@ -127,7 +121,7 @@ export default function Team() {
                 </Link>
 
                 <Link href="/projects" className="hero-secondary">
-                  <span>View Our Work</span>
+                  <span>Explore Our Work</span>
                   <ArrowUpRight size={17} strokeWidth={2} />
                 </Link>
               </motion.div>
@@ -174,7 +168,7 @@ export default function Team() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease }}
               >
-                <Crown size={17} />
+                <Sparkles size={17} />
                 <div>
                   <span>LEADERSHIP</span>
                   <strong>Vision · Direction</strong>
@@ -226,7 +220,7 @@ export default function Team() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      Small team.
+                      <span>Small team.</span> Serious
                     </motion.span>
                   </span>
                   <span className="reveal-mask">
@@ -235,7 +229,7 @@ export default function Team() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      Serious <span>ambition.</span>
+                      ambition.
                     </motion.span>
                   </span>
                 </h2>
@@ -292,7 +286,7 @@ export default function Team() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    The people behind
+                    <span>The people behind</span>
                   </motion.span>
                 </span>
                 <span className="reveal-mask">
@@ -301,7 +295,7 @@ export default function Team() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    the <span>work.</span>
+                    the work.
                   </motion.span>
                 </span>
               </h2>
@@ -314,39 +308,26 @@ export default function Team() {
               whileInView="show"
               viewport={viewportLow}
             >
-              {team.map((member) => {
-                const Icon = member.icon;
-                return (
-                  <motion.article
-                    className="roster-row"
-                    key={member.number}
-                    variants={fadeUp}
-                  >
-                    <span className="roster-index">{member.number}</span>
+              {team.map((member) => (
+                <motion.article
+                  className="roster-row"
+                  key={member.number}
+                  variants={fadeUp}
+                >
+                  <span className="roster-index">{member.number}</span>
 
-                    <div className="roster-name-block">
-                      <span className="roster-role-short">{member.short}</span>
-                      <h3 className="roster-name">{member.name}</h3>
-                      <span className="roster-role">{member.role}</span>
-                    </div>
+                  <div className="roster-name-block">
+                    <span className="roster-role-short">{member.short}</span>
+                    <h3 className="roster-name">{member.name}</h3>
+                    <span className="roster-role">{member.role}</span>
+                  </div>
 
-                    <div className="roster-line-block">
-                      <span className="roster-line-divider" />
-                      <p className="roster-line">{member.line}</p>
-                    </div>
-
-                    <div className="roster-icon">
-                      <Icon size={22} strokeWidth={1.6} />
-                    </div>
-
-                    <div className="roster-arrow">
-                      <ArrowUpRight size={20} />
-                    </div>
-
-                    <span className="roster-monogram">{member.monogram}</span>
-                  </motion.article>
-                );
-              })}
+                  <div className="roster-line-block">
+                    <span className="roster-line-divider" />
+                    <p className="roster-line">{member.line}</p>
+                  </div>
+                </motion.article>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -370,7 +351,7 @@ export default function Team() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    One direction.
+                    <span>One direction.</span> Shared
                   </motion.span>
                 </span>
                 <span className="reveal-mask">
@@ -379,7 +360,7 @@ export default function Team() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    Shared <span>standards.</span>
+                    standards.
                   </motion.span>
                 </span>
               </h2>
@@ -447,7 +428,7 @@ export default function Team() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    Let's build something
+                    <span>Let's build something</span>
                   </motion.span>
                 </span>
                 <span className="reveal-mask">
@@ -456,14 +437,14 @@ export default function Team() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    <span>worth building.</span>
+                    worth building.
                   </motion.span>
                 </span>
               </h2>
 
               <motion.p variants={fadeUp}>
-                Have an idea, a challenge or a project in mind? The AJ Technologies
-                team is ready to help you move it forward.
+                Have an idea, a challenge or a project in mind? The AJ
+                Technologies team is ready to help you move it forward.
               </motion.p>
 
               <motion.div className="team-cta-actions" variants={fadeUp}>

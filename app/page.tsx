@@ -374,25 +374,27 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    Technology
+                    <span>Technology</span>
                   </motion.span>
                 </span>
+
                 <span className="reveal-mask">
                   <motion.span
                     className="reveal-line"
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    that moves
+                    <span>that</span> moves
                   </motion.span>
                 </span>
+
                 <span className="reveal-mask">
                   <motion.span
                     className="reveal-line"
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    <span>forward.</span>
+                    forward.
                   </motion.span>
                 </span>
               </h1>
@@ -543,7 +545,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      We don't just build technology.
+                      <span>We don't just build technology.</span>
                     </motion.span>
                   </span>
                   <span className="reveal-mask">
@@ -552,7 +554,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      We build <span>possibility.</span>
+                      We build possibility.
                     </motion.span>
                   </span>
                 </h2>
@@ -598,7 +600,11 @@ export default function Home() {
                 ["02", "Precision", "Every detail has a role to play."],
                 ["03", "Progress", "Every product should keep evolving."],
               ].map(([number, title, text]) => (
-                <motion.div className="value-card" key={number} variants={fadeUp}>
+                <motion.div
+                  className="value-card"
+                  key={number}
+                  variants={fadeUp}
+                >
                   <span className="value-number">{number}</span>
                   <div className="value-content">
                     <h3>{title}</h3>
@@ -635,7 +641,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      Different challenges.
+                      <span>Different challenges.</span>
                     </motion.span>
                   </span>
                   <span className="reveal-mask">
@@ -644,7 +650,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      One <span>technology partner.</span>
+                      One technology partner.
                     </motion.span>
                   </span>
                 </h2>
@@ -733,7 +739,7 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    Social Media
+                    <span>Social Media</span>
                   </motion.span>
                 </span>
                 <span className="reveal-mask">
@@ -742,7 +748,7 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    <span>Management.</span>
+                    Management.
                   </motion.span>
                 </span>
               </h2>
@@ -769,9 +775,7 @@ export default function Home() {
                     variants={fadeUp}
                   >
                     <div className="social-card-glow" />
-                    <span className="social-card-number">
-                      {service.number}
-                    </span>
+                    <span className="social-card-number">{service.number}</span>
                     <div className="social-card-icon">
                       <Icon size={22} strokeWidth={1.8} />
                     </div>
@@ -836,7 +840,7 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-                <section className="graphics-section">
+        <section className="graphics-section">
           <div className="graphics-section-grid" />
           <div className="graphics-section-glow" />
 
@@ -858,7 +862,7 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    Graphics
+                    <span>Graphics</span>
                   </motion.span>
                 </span>
                 <span className="reveal-mask">
@@ -867,14 +871,14 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    <span>Design.</span>
+                    Design.
                   </motion.span>
                 </span>
               </h2>
               <motion.p variants={fadeUp}>
-                AJ Technologies designs brand systems, social graphics, marketing
-                collateral and digital interfaces — visual work built around a
-                clear brief and structured for real-world use.
+                AJ Technologies designs brand systems, social graphics,
+                marketing collateral and digital interfaces — visual work built
+                around a clear brief and structured for real-world use.
               </motion.p>
             </motion.div>
 
@@ -973,7 +977,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      The technology
+                      <span>The technology</span>
                     </motion.span>
                   </span>
                   <span className="reveal-mask">
@@ -982,7 +986,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      behind the <span>journey.</span>
+                      behind the journey.
                     </motion.span>
                   </span>
                 </h2>
@@ -1028,7 +1032,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      Ideas made <span>real.</span>
+                      <span>Ideas</span> made real.
                     </motion.span>
                   </span>
                 </h2>
@@ -1119,7 +1123,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      Built on clarity.
+                      <span>Built on clarity.</span>
                     </motion.span>
                   </span>
                   <span className="reveal-mask">
@@ -1128,7 +1132,7 @@ export default function Home() {
                       variants={fadeUp}
                       style={{ display: "block" }}
                     >
-                      Driven by <span>purpose.</span>
+                      Driven by purpose.
                     </motion.span>
                   </span>
                 </h2>
@@ -1200,7 +1204,7 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    Clear thinking.
+                    <span>Clear thinking.</span>
                   </motion.span>
                 </span>
                 <span className="reveal-mask">
@@ -1209,7 +1213,7 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    Better <span>outcomes.</span>
+                    Better outcomes.
                   </motion.span>
                 </span>
               </h2>
@@ -1291,7 +1295,7 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    Your next idea
+                    <span>Your next idea</span>
                   </motion.span>
                 </span>
                 <span className="reveal-mask">
@@ -1300,14 +1304,14 @@ export default function Home() {
                     variants={fadeUp}
                     style={{ display: "block" }}
                   >
-                    deserves to <span>move.</span>
+                    deserves to move.
                   </motion.span>
                 </span>
               </h2>
 
               <motion.p variants={fadeUp}>
-                Tell us what you're building, improving or imagining. Let's
-                turn the next step into something real.
+                Tell us what you're building, improving or imagining. Let's turn
+                the next step into something real.
               </motion.p>
 
               <motion.div variants={fadeUp}>
@@ -1465,7 +1469,7 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-            <AnimatePresence>
+      <AnimatePresence>
         {graphicsModalOpen && (
           <motion.div
             className="social-modal-backdrop"
@@ -1500,8 +1504,8 @@ export default function Home() {
                 <h2>Graphics Design</h2>
                 <p>
                   Brand systems, social graphics, marketing collateral and
-                  digital interfaces — designed with purpose and delivered
-                  ready for real-world use.
+                  digital interfaces — designed with purpose and delivered ready
+                  for real-world use.
                 </p>
               </div>
 
@@ -1531,14 +1535,16 @@ export default function Home() {
                   </h3>
                   <p>
                     Every visual we produce serves a function — to communicate
-                    clearly, fit its format and reflect the brand it belongs
-                    to. We design around the brief, the audience and the final
-                    use case, not just the visual alone.
+                    clearly, fit its format and reflect the brand it belongs to.
+                    We design around the brief, the audience and the final use
+                    case, not just the visual alone.
                   </p>
                 </div>
 
                 <div className="social-modal-block">
-                  <span className="social-modal-block-label">HOW WE DELIVER</span>
+                  <span className="social-modal-block-label">
+                    HOW WE DELIVER
+                  </span>
                   <div className="social-modal-platforms">
                     {graphicsProof.map((item) => {
                       const Icon = item.icon;

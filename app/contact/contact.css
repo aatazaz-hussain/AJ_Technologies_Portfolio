@@ -1,3 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #030b18;
+  color: #ffffff;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+main > *:first-child {
+  margin-top: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
 .contact-page {
   overflow: hidden;
   background: #030b18;
@@ -20,8 +58,10 @@
 .contact-page .reveal-mask {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.06em;
-  margin-bottom: -0.06em;
+  padding-top: 0.16em;
+  padding-bottom: 0.16em;
+  margin-top: -0.16em;
+  margin-bottom: -0.16em;
 }
 
 .contact-page .reveal-line {
@@ -38,20 +78,25 @@
   text-transform: uppercase;
 }
 
-.contact-page h1 span span,
-.contact-page h2 span span {
+.contact-page h1 > span > .reveal-line > span,
+.contact-page h2 > span > .reveal-line > span {
   color: #1684ff;
 }
-
-/* ============ HERO ============ */
-
 .contact-hero {
   position: relative;
   overflow: hidden;
-  padding: 90px 0 70px;
+  padding: 0 0 70px;
   background:
-    radial-gradient(circle at 78% 48%, rgba(8, 124, 255, 0.18), transparent 32%),
-    radial-gradient(circle at 15% 65%, rgba(8, 124, 255, 0.08), transparent 32%),
+    radial-gradient(
+      circle at 78% 48%,
+      rgba(8, 124, 255, 0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 65%,
+      rgba(8, 124, 255, 0.08),
+      transparent 32%
+    ),
     #030b18;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -240,8 +285,6 @@
 .contact-page .hero-secondary:hover svg {
   transform: translateX(5px);
 }
-
-/* ============ HERO VISUAL ============ */
 
 .contact-hero-visual {
   min-height: 520px;
@@ -453,8 +496,6 @@
   bottom: 34%;
 }
 
-/* ============ MAIN ============ */
-
 .contact-main {
   padding: 80px 0;
   background: #071223;
@@ -621,8 +662,6 @@
   letter-spacing: 0.02em;
 }
 
-/* ============ INFO ============ */
-
 .contact-info {
   position: relative;
   padding-top: 6px;
@@ -731,8 +770,6 @@
   color: #1684ff;
 }
 
-/* ============ SOCIALS ============ */
-
 .contact-socials {
   padding: 80px 0;
   background: #030b18;
@@ -763,7 +800,11 @@
   padding: 26px 22px;
   border: 1px solid rgba(255, 255, 255, 0.075);
   border-radius: 13px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.012)
+  );
   text-decoration: none;
   transition:
     border-color 0.4s ease,
@@ -775,7 +816,11 @@
 .social-card:hover {
   transform: translateY(-6px);
   border-color: rgba(22, 132, 255, 0.45);
-  background: linear-gradient(145deg, rgba(22, 132, 255, 0.09), rgba(255, 255, 255, 0.018));
+  background: linear-gradient(
+    145deg,
+    rgba(22, 132, 255, 0.09),
+    rgba(255, 255, 255, 0.018)
+  );
   box-shadow: 0 22px 55px rgba(0, 71, 180, 0.15);
 }
 
@@ -828,8 +873,6 @@
   letter-spacing: 0.02em;
   word-break: break-word;
 }
-
-/* ============ CTA ============ */
 
 .contact-cta {
   position: relative;
@@ -921,15 +964,18 @@
 .contact-cta-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  align-items: center;
   justify-content: center;
+  gap: 14px;
   margin-top: 32px;
 }
 
 .contact-page .cta-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  height: 54px;
   min-height: 54px;
   padding: 0 24px;
   color: #ffffff;
@@ -938,6 +984,7 @@
   border-radius: 9px;
   font-size: 14.5px;
   font-weight: 750;
+  line-height: 1;
   text-decoration: none;
   box-shadow: 0 18px 50px rgba(8, 124, 255, 0.24);
   transition:
@@ -963,16 +1010,21 @@
 .contact-page .cta-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  width: 174px;
+  height: 54px;
   min-height: 54px;
-  padding: 0 22px;
-  color: #cbd5e4;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 9px;
-  background: rgba(255, 255, 255, 0.025);
   font-size: 14.5px;
-  font-weight: 700;
+  font-weight: 750;
+  line-height: 1;
   text-decoration: none;
+  box-sizing: border-box;
   transition:
     transform 0.3s ease,
     color 0.3s ease,
@@ -995,7 +1047,19 @@
   transform: translate(4px, -4px);
 }
 
-/* ============ KEYFRAMES ============ */
+.contact-page .contact-cta-actions .cta-button,
+.contact-page .contact-cta-actions .cta-link {
+  align-self: center;
+  vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+  transform: none;
+}
+
+.contact-page .contact-cta-actions .cta-button:hover,
+.contact-page .contact-cta-actions .cta-link:hover {
+  transform: translateY(-5px);
+}
 
 @keyframes contactGridMove {
   from {
@@ -1084,8 +1148,6 @@
     opacity: 0;
   }
 }
-
-/* ============ RESPONSIVE ============ */
 
 @media (max-width: 1050px) {
   .contact-hero-container {
@@ -1209,8 +1271,8 @@
 
   .contact-page .cta-button,
   .contact-page .cta-link {
-    justify-content: center;
     width: 100%;
+    max-width: 100%;
   }
 }
 

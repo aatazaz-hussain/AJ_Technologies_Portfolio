@@ -1,3 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #030b18;
+  color: #ffffff;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+main > *:first-child {
+  margin-top: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
 .team-page {
   overflow: hidden;
   background: #030b18;
@@ -20,8 +58,10 @@
 .team-page .reveal-mask {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.06em;
-  margin-bottom: -0.06em;
+  padding-top: 0.18em;
+  padding-bottom: 0.18em;
+  margin-top: -0.18em;
+  margin-bottom: -0.18em;
 }
 
 .team-page .reveal-line {
@@ -38,20 +78,26 @@
   text-transform: uppercase;
 }
 
-.team-page h1 span span,
-.team-page h2 span span {
+.team-page h1 > span > .reveal-line > span,
+.team-page h2 > span > .reveal-line > span {
   color: #1684ff;
 }
-
-/* ============ HERO ============ */
 
 .team-hero {
   position: relative;
   overflow: hidden;
-  padding: 90px 0 70px;
+  padding: 0 0 70px;
   background:
-    radial-gradient(circle at 78% 48%, rgba(8, 124, 255, 0.18), transparent 32%),
-    radial-gradient(circle at 15% 65%, rgba(8, 124, 255, 0.08), transparent 32%),
+    radial-gradient(
+      circle at 78% 48%,
+      rgba(8, 124, 255, 0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 65%,
+      rgba(8, 124, 255, 0.08),
+      transparent 32%
+    ),
     #030b18;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -240,8 +286,6 @@
 .team-page .hero-secondary:hover svg {
   transform: translateX(5px);
 }
-
-/* ============ HERO VISUAL ============ */
 
 .team-hero-visual {
   min-height: 520px;
@@ -453,8 +497,6 @@
   bottom: 34%;
 }
 
-/* ============ INTRO ============ */
-
 .team-intro {
   padding: 60px 0;
   background: #071223;
@@ -548,8 +590,6 @@
   animation: teamCorePulse 3s ease-in-out infinite;
 }
 
-/* ============ ROSTER ============ */
-
 .team-roster {
   padding: 70px 0;
   background: #030b18;
@@ -576,7 +616,7 @@
 .roster-row {
   position: relative;
   display: grid;
-  grid-template-columns: 60px 1.1fr 1.4fr 60px 60px;
+  grid-template-columns: 60px 1.1fr 1.4fr;
   align-items: center;
   gap: 28px;
   padding: 32px 8px;
@@ -675,75 +715,6 @@
   max-width: 420px;
 }
 
-.roster-icon {
-  position: relative;
-  z-index: 2;
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  color: #1684ff;
-  border: 1px solid rgba(22, 132, 255, 0.24);
-  border-radius: 11px;
-  background: rgba(22, 132, 255, 0.06);
-  transition:
-    transform 0.4s ease,
-    background 0.4s ease;
-}
-
-.roster-row:hover .roster-icon {
-  transform: rotate(-8deg) scale(1.08);
-  background: rgba(22, 132, 255, 0.16);
-}
-
-.roster-arrow {
-  position: relative;
-  z-index: 2;
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  color: #1684ff;
-  border: 1px solid rgba(22, 132, 255, 0.24);
-  border-radius: 50%;
-  background: rgba(22, 132, 255, 0.04);
-  transition:
-    transform 0.4s ease,
-    color 0.3s ease,
-    background 0.3s ease;
-}
-
-.roster-row:hover .roster-arrow {
-  transform: rotate(45deg);
-  color: #ffffff;
-  background: #1684ff;
-}
-
-.roster-monogram {
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  color: rgba(22, 132, 255, 0.06);
-  font-size: 220px;
-  font-weight: 800;
-  line-height: 0.8;
-  letter-spacing: -0.06em;
-  pointer-events: none;
-  transition:
-    color 0.5s ease,
-    transform 0.5s ease;
-  user-select: none;
-}
-
-.roster-row:hover .roster-monogram {
-  color: rgba(22, 132, 255, 0.1);
-  transform: translateY(-50%) translateX(-10px);
-}
-
-/* ============ VALUES ============ */
-
 .team-values {
   padding: 70px 0;
   background: #071223;
@@ -773,7 +744,11 @@
   padding: 28px 24px;
   border: 1px solid rgba(255, 255, 255, 0.075);
   border-radius: 13px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.012)
+  );
   transition:
     border-color 0.35s ease,
     background 0.35s ease,
@@ -783,7 +758,11 @@
 .value-card:hover {
   transform: translateY(-6px);
   border-color: rgba(22, 132, 255, 0.45);
-  background: linear-gradient(145deg, rgba(22, 132, 255, 0.09), rgba(255, 255, 255, 0.018));
+  background: linear-gradient(
+    145deg,
+    rgba(22, 132, 255, 0.09),
+    rgba(255, 255, 255, 0.018)
+  );
 }
 
 .value-number {
@@ -807,8 +786,6 @@
   font-size: 13.5px;
   line-height: 1.7;
 }
-
-/* ============ CTA ============ */
 
 .team-cta {
   position: relative;
@@ -900,15 +877,18 @@
 .team-cta-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  align-items: center;
   justify-content: center;
+  gap: 14px;
   margin-top: 32px;
 }
 
 .team-page .cta-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  height: 54px;
   min-height: 54px;
   padding: 0 24px;
   color: #ffffff;
@@ -917,6 +897,7 @@
   border-radius: 9px;
   font-size: 14.5px;
   font-weight: 750;
+  line-height: 1;
   text-decoration: none;
   box-shadow: 0 18px 50px rgba(8, 124, 255, 0.24);
   transition:
@@ -942,16 +923,21 @@
 .team-page .cta-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  width: 174px;
+  height: 54px;
   min-height: 54px;
-  padding: 0 22px;
-  color: #cbd5e4;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 9px;
-  background: rgba(255, 255, 255, 0.025);
   font-size: 14.5px;
-  font-weight: 700;
+  font-weight: 750;
+  line-height: 1;
   text-decoration: none;
+  box-sizing: border-box;
   transition:
     transform 0.3s ease,
     color 0.3s ease,
@@ -974,7 +960,19 @@
   transform: translate(4px, -4px);
 }
 
-/* ============ KEYFRAMES ============ */
+.team-page .team-cta-actions .cta-button,
+.team-page .team-cta-actions .cta-link {
+  align-self: center;
+  vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+  transform: none;
+}
+
+.team-page .team-cta-actions .cta-button:hover,
+.team-page .team-cta-actions .cta-link:hover {
+  transform: translateY(-5px);
+}
 
 @keyframes teamGridMove {
   from {
@@ -1076,8 +1074,6 @@
   }
 }
 
-/* ============ RESPONSIVE ============ */
-
 @media (max-width: 1050px) {
   .team-hero-container {
     grid-template-columns: 1fr;
@@ -1110,7 +1106,7 @@
   }
 
   .roster-row {
-    grid-template-columns: 50px 1fr 46px 46px;
+    grid-template-columns: 50px 1fr;
     gap: 22px;
     padding: 26px 8px;
   }
@@ -1222,20 +1218,10 @@
     font-size: 26px;
   }
 
-  .roster-icon,
-  .roster-arrow {
-    display: none;
-  }
-
   .roster-line-block {
     grid-column: 1 / -1;
     padding-left: 40px;
     margin-top: 8px;
-  }
-
-  .roster-monogram {
-    font-size: 140px;
-    right: -20px;
   }
 
   .values-grid {
@@ -1249,8 +1235,8 @@
 
   .team-page .cta-button,
   .team-page .cta-link {
-    justify-content: center;
     width: 100%;
+    max-width: 100%;
   }
 }
 
