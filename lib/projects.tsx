@@ -8,6 +8,8 @@ import {
   Home as HomeIcon,
   BookOpen,
   LayoutGrid,
+  Stethoscope,
+  FileText,
 } from "lucide-react";
 
 export type Project = {
@@ -29,11 +31,61 @@ export type Project = {
   tech: string[];
   outcome: string;
   purpose: string;
+  imageFit?: "cover" | "contain";
 };
 
 export const projects: Project[] = [
   {
     number: "01",
+    slug: "aj-healthcloud",
+    image: "/images/healthcare_cover.jpg",
+    title: "AJ HealthCloud",
+    category: "AI SAAS · HEALTHCARE",
+    tags: ["ai-ml", "software", "gen-ai"],
+    icon: Stethoscope,
+    tagline: "One patient. One complete history.",
+    shortDescription:
+      "An AI-assisted dental clinic management SaaS that centralizes patient records, odontograms, X-rays, treatment plans and WhatsApp communication — while dentists keep full control over every clinical decision.",
+    overview:
+      "AJ HealthCloud is a cloud-based dental clinic management platform designed to help dentists centralize patient records, dental histories, appointments, treatment plans, prescriptions, X-rays, OPG images and clinical documents in one organized system. Its AI-assisted workflows help dentists structure patient histories, prepare clinical notes, summarize previous visits and draft personalized follow-up instructions — while every clinical decision and final approval remains under the dentist's control.",
+    problem:
+      "Dental practices run on fragmented tools — paper charts, scattered X-rays, disconnected WhatsApp threads and manual follow-ups. Patient history is rarely in one place, and repetitive administrative work eats into clinical time.",
+    solution:
+      "A single cloud platform where the full patient record lives — with AI assisting documentation, visit summaries and patient communication, always under dentist review and final approval.",
+    role: "AJ Technologies designed and built AJ HealthCloud as a full product — product strategy, system architecture, frontend and backend engineering, the AI-assisted documentation layer, role-based access, and the WhatsApp communication integration.",
+    deliverables: [
+      "Product strategy and system architecture",
+      "Full-stack SaaS platform build",
+      "AI-assisted clinical documentation",
+      "Digital odontogram and imaging module",
+      "WhatsApp communication integration",
+      "Role-based access and security model",
+    ],
+    features: [
+      "Unified patient records",
+      "AI-assisted clinical notes",
+      "Digital odontograms and tooth charting",
+      "X-ray and OPG image management",
+      "Treatment plans and prescriptions",
+      "Appointments, reminders and billing",
+      "WhatsApp patient communication",
+      "Role-based access control",
+    ],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "LLMs",
+      "PostgreSQL",
+      "WhatsApp API",
+    ],
+    outcome:
+      "AJ HealthCloud reduces repetitive administrative work, keeps treatment history organized and connected, and streamlines day-to-day dental practice operations — while keeping the dentist in full control of every clinical decision.",
+    purpose:
+      "A full SaaS product built around a single idea: one patient, one complete history — with AI assisting, not deciding.",
+  },
+  {
+    number: "02",
     slug: "see-and-hire",
     image: "/projects/see-and-hire.png",
     title: "See and Hire",
@@ -71,7 +123,7 @@ export const projects: Project[] = [
       "A full product build — front end, back end, matching logic and workflow — delivered as one system.",
   },
   {
-    number: "02",
+    number: "03",
     slug: "nutra-ai",
     image: "/projects/nutra-ai.png",
     title: "Nutra AI",
@@ -109,7 +161,7 @@ export const projects: Project[] = [
       "An experiment in using LLMs where personalization is the whole point — not a feature added on top.",
   },
   {
-    number: "03",
+    number: "04",
     slug: "tableop",
     image: "/projects/tableop.png",
     title: "Tableop",
@@ -147,7 +199,7 @@ export const projects: Project[] = [
       "A build that treats AI as core infrastructure — not a bolt-on feature.",
   },
   {
-    number: "04",
+    number: "05",
     slug: "dental-dynamo",
     image: "/projects/dental-dynamo.png",
     title: "Dental Dynamo",
@@ -185,7 +237,7 @@ export const projects: Project[] = [
       "A working computer-vision pipeline applied to a real clinical image type — not a toy dataset.",
   },
   {
-    number: "05",
+    number: "06",
     slug: "mental-health-in-tech",
     image: "/projects/mental-health.png",
     title: "Mental Health in Tech",
@@ -223,7 +275,7 @@ export const projects: Project[] = [
       "Data work done with care — cleaning, questioning, and reporting what the numbers actually say.",
   },
   {
-    number: "06",
+    number: "07",
     slug: "job-salaries-management",
     image: "/projects/job-salaries.png",
     title: "Job Salaries Management",
@@ -261,7 +313,7 @@ export const projects: Project[] = [
       "Structured analysis that takes raw records and returns a clear picture of salary trends.",
   },
   {
-    number: "07",
+    number: "08",
     slug: "house-price-predictions",
     image: "/projects/house-price.png",
     title: "House Price Predictions",
@@ -299,7 +351,7 @@ export const projects: Project[] = [
       "A complete ML pipeline from raw data to a tested prediction — evaluation included, not skipped.",
   },
   {
-    number: "08",
+    number: "09",
     slug: "story-generator",
     image: "/projects/story-generator.png",
     title: "Story Generator",
@@ -337,7 +389,7 @@ export const projects: Project[] = [
       "Creative experimentation with LLMs — using the model as a writing partner rather than a text expander.",
   },
   {
-    number: "09",
+    number: "10",
     slug: "social-media-management",
     image: "/projects/social-media.png",
     title: "Social Media Management",
@@ -375,7 +427,7 @@ export const projects: Project[] = [
       "A service line that treats brand growth as an operating system — not a series of one-off posts.",
   },
   {
-    number: "10",
+    number: "11",
     slug: "graphics-design",
     image: "/projects/graphics-design.png",
     title: "Graphics Design",

@@ -30,6 +30,16 @@ import {
   Printer,
   Layers,
   Check,
+  Stethoscope,
+  FileText,
+  Pill,
+  ScanLine,
+  MessageCircle,
+  CalendarCheck,
+  Lock,
+  Cloud,
+  Sparkle,
+  ArrowRight,
 } from "lucide-react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import "./home.css";
@@ -340,7 +350,47 @@ const process = [
     text: "We continuously improve the product as your needs change.",
   },
 ];
+const flagshipFeatures = [
+  {
+    icon: Stethoscope,
+    title: "Unified Patient Records",
+    text: "Complete dental histories, treatment plans, prescriptions and clinical documents in one place.",
+  },
+  {
+    icon: FileText,
+    title: "AI-Assisted Notes",
+    text: "Structured clinical notes and visit summaries drafted automatically — always dentist-approved.",
+  },
+  {
+    icon: ScanLine,
+    title: "Digital Odontograms",
+    text: "Interactive tooth charting with X-rays and OPG images linked directly to each patient record.",
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp Communication",
+    text: "Personalized follow-up instructions and appointment reminders sent through WhatsApp.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Appointments & Billing",
+    text: "Scheduling, reminders and billing workflows streamlined into a single clinic dashboard.",
+  },
+  {
+    icon: Lock,
+    title: "Role-Based Access",
+    text: "Granular permissions keep clinical data secure across dentists, staff and administrators.",
+  },
+];
 
+const flagshipTags = [
+  "AI-Assisted",
+  "Dental SaaS",
+  "WhatsApp",
+  "Role-Based Access",
+  "Cloud",
+  "Odontogram",
+];
 export default function Home() {
   const [socialModalOpen, setSocialModalOpen] = useState(false);
   const [graphicsModalOpen, setGraphicsModalOpen] = useState(false);
@@ -716,7 +766,166 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+        {/* ============ FLAGSHIP / AJ HEALTHCLOUD ============ */}
+        <section className="flagship-section">
+          <div className="flagship-grid-bg" />
+          <div className="flagship-glow flagship-glow-one" />
+          <div className="flagship-glow flagship-glow-two" />
 
+          <div className="section-container">
+            <div className="flagship-layout">
+              <motion.div
+                className="flagship-copy"
+                variants={staggerParent}
+                initial="hidden"
+                whileInView="show"
+                viewport={viewport}
+              >
+                <motion.div className="flagship-eyebrow" variants={fadeUp}>
+                  <span className="eyebrow-pulse" />
+                  <span>FLAGSHIP PRODUCT</span>
+                  <span className="eyebrow-divider" />
+                  <span>AJ HEALTHCLOUD</span>
+                </motion.div>
+
+                <h2 className="flagship-title">
+                  <span className="reveal-mask">
+                    <motion.span
+                      className="reveal-line"
+                      variants={fadeUp}
+                      style={{ display: "block" }}
+                    >
+                      <span>One Patient.</span>
+                    </motion.span>
+                  </span>
+                  <span className="reveal-mask">
+                    <motion.span
+                      className="reveal-line"
+                      variants={fadeUp}
+                      style={{ display: "block" }}
+                    >
+                      <span>One Complete History.</span>
+                    </motion.span>
+                  </span>
+                </h2>
+
+                <motion.p className="flagship-description" variants={fadeUp}>
+                  AI-assisted dental clinic management that centralizes patient
+                  records, odontograms, X-rays, treatment plans and
+                  communication in one intelligent system — while dentists keep
+                  full control over every clinical decision and final approval.
+                </motion.p>
+
+                <motion.div className="flagship-tags" variants={fadeUp}>
+                  {flagshipTags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </motion.div>
+
+                <motion.div className="flagship-actions" variants={fadeUp}>
+                  <Link href="/projects" className="flagship-primary">
+                    <span>Explore the product</span>
+                    <ArrowUpRight size={18} strokeWidth={2} />
+                  </Link>
+                  <Link href="/contact" className="flagship-secondary">
+                    <span>Request a demo</span>
+                    <ArrowRight size={18} strokeWidth={2} />
+                  </Link>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="flagship-visual"
+                initial={{ opacity: 0, scale: 0.94 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={viewport}
+                transition={{ duration: 0.9, ease }}
+              >
+                <div className="flagship-visual-aura" />
+                <div className="flagship-orbit orbit-a" />
+                <div className="flagship-orbit orbit-b" />
+
+                <div className="flagship-image-frame">
+                  <Image
+                    src="/images/AJ HealthCloud Dental AI Network.png"
+                    alt="AJ HealthCloud — AI-assisted dental clinic management platform"
+                    fill
+                    sizes="(max-width: 1050px) 100vw, 640px"
+                    className="flagship-image"
+                  />
+                  <div className="flagship-image-overlay" />
+                  <div className="flagship-scan" />
+
+                  <div className="flagship-corner tl" />
+                  <div className="flagship-corner tr" />
+                  <div className="flagship-corner bl" />
+                  <div className="flagship-corner br" />
+
+                  <div className="flagship-image-label">
+                    <span>
+                      <i /> PRODUCT STATUS
+                    </span>
+                    <strong>CLINICAL · AI-ASSISTED</strong>
+                  </div>
+                </div>
+
+                <motion.div
+                  className="flagship-floating top"
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={viewport}
+                  transition={{ duration: 0.8, delay: 0.3, ease }}
+                >
+                  <Cloud size={17} />
+                  <div>
+                    <span>DEPLOYMENT</span>
+                    <strong>Cloud-based</strong>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="flagship-floating bottom"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={viewport}
+                  transition={{ duration: 0.8, delay: 0.45, ease }}
+                >
+                  <Sparkle size={17} />
+                  <div>
+                    <span>AI WORKFLOWS</span>
+                    <strong>Dentist-approved</strong>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              className="flagship-features"
+              variants={staggerParentSlow}
+              initial="hidden"
+              whileInView="show"
+              viewport={viewportLow}
+            >
+              {flagshipFeatures.map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <motion.article
+                    className="flagship-feature-card"
+                    key={feature.title}
+                    variants={fadeUp}
+                  >
+                    <div className="flagship-feature-glow" />
+                    <div className="flagship-feature-icon">
+                      <Icon size={20} strokeWidth={1.8} />
+                    </div>
+                    <h3>{feature.title}</h3>
+                    <p>{feature.text}</p>
+                  </motion.article>
+                );
+              })}
+            </motion.div>
+          </div>
+        </section>
         <section className="social-section">
           <div className="social-section-grid" />
           <div className="social-section-glow" />

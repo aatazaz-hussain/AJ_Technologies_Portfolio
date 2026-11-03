@@ -3,18 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Code2,
-  Sparkles,
-} from "lucide-react";
+import { ArrowUpRight, Code2, Sparkles } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { projects } from "@/lib/projects";
 import "./projects.css";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-const GITHUB_URL =
-  "https://github.com/aqsatanoli?tab=repositories&type=source";
+const GITHUB_URL = "https://github.com/aqsatanoli?tab=repositories&type=source";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -324,7 +319,7 @@ export default function Projects() {
                           alt={project.title}
                           fill
                           sizes="(max-width: 760px) 100vw, 50vw"
-                          className="project-card-image"
+                          className={`project-card-image ${project.imageFit === "contain" ? "fit-contain" : ""}`}
                         />
 
                         <div className="project-card-overlay" />
