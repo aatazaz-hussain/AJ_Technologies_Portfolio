@@ -550,10 +550,18 @@
   }
 
   .project-detail-hero-visual {
-    height: 300px;
     aspect-ratio: auto;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #071223;
   }
-
+  .project-detail-hero-image {
+    position: relative !important; /* Override the 'fill' absolute positioning */
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Shows 100% of the image, no side crop */
+  }
   .project-detail-body {
     padding: 45px 0;
   }
