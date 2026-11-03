@@ -519,8 +519,8 @@
   }
 
   .project-detail-hero-visual {
-    height: 340px;
-    aspect-ratio: 16 / 8; /* middle ground on tablet */
+    height: 380px;
+    aspect-ratio: auto;
   }
 
   .project-blocks-grid {
@@ -551,7 +551,7 @@
 
   .project-detail-hero-visual {
     height: 260px;
-    aspect-ratio: 16 / 9; /* slightly taller on mobile, easier to see */
+    aspect-ratio: auto;
   }
 
   .project-detail-body {
