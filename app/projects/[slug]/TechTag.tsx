@@ -78,7 +78,7 @@ export default function TechTag({ label }: { label: string }) {
   const { Icon, kind } = entry;
 
   return (
-    <span className="block-tech-tag">
+    <span className="block-tech-tag btn-pill">
       <span className={`block-tech-icon block-tech-icon-${kind}`}>
         <Icon size={15} />
       </span>

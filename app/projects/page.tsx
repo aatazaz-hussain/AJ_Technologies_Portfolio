@@ -113,7 +113,7 @@ export default function Projects() {
               </motion.div>
 
               <motion.div className="projects-hero-actions" variants={fadeUp}>
-                <Link href="/contact" className="hero-primary">
+                <Link href="/contact" className="hero-primary btn">
                   <span>Start a Project</span>
                   <ArrowUpRight size={17} strokeWidth={2} />
                 </Link>
@@ -122,7 +122,7 @@ export default function Projects() {
                   href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hero-secondary"
+                  className="hero-secondary btn"
                 >
                   <Code2 size={17} />
                   <span>View GitHub</span>
@@ -143,6 +143,13 @@ export default function Projects() {
               <div className="hero-image-frame">
                 <Image
                   src="/images/projects-hero.png"
+                  alt=""
+                  fill
+                  className="hero-image-bg"
+                  aria-hidden="true"
+                />
+                <Image
+                  src="/images/projects-hero.png"
                   alt="Abstract dashboard composition representing the AJ Technologies project portfolio"
                   fill
                   priority
@@ -156,13 +163,6 @@ export default function Projects() {
                 <div className="hero-corner hero-corner-tr" />
                 <div className="hero-corner hero-corner-bl" />
                 <div className="hero-corner hero-corner-br" />
-
-                <div className="hero-image-label">
-                  <span>
-                    <i /> PORTFOLIO
-                  </span>
-                  <strong>BUILT · SHIPPED · LIVE</strong>
-                </div>
               </div>
 
               <motion.div
@@ -252,18 +252,19 @@ export default function Projects() {
               </motion.div>
 
               <motion.div
-                className="projects-intro-orbit"
-                initial={{ opacity: 0, scale: 0.8 }}
+                className="projects-intro-image-frame"
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={viewport}
                 transition={{ duration: 0.9, ease }}
               >
-                <div className="orbit-ring orbit-ring-a" />
-                <div className="orbit-ring orbit-ring-b" />
-                <div className="orbit-ring orbit-ring-c" />
-                <div className="orbit-core">
-                  <Sparkles size={26} strokeWidth={1.6} />
-                </div>
+                <Image
+                  src="/images/projects-intro.png"
+                  alt="AJ Technologies Selected Work"
+                  fill
+                  sizes="(max-width: 1050px) 100vw, 300px"
+                  className="projects-intro-image"
+                />
               </motion.div>
             </div>
           </div>
@@ -302,7 +303,7 @@ export default function Projects() {
                 return (
                   <motion.article
                     key={project.slug}
-                    className="project-card"
+                    className="project-card card"
                     layout
                     initial={{ opacity: 0, y: 30, scale: 0.96 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -314,14 +315,24 @@ export default function Projects() {
                       aria-label={`Open ${project.title}`}
                     >
                       <div className="project-card-visual">
+                        {/* 1. Blurred Background */}
+                        <Image
+                          src={project.image}
+                          alt=""
+                          fill
+                          sizes="(max-width: 760px) 100vw, 50vw"
+                          className="project-card-image-bg"
+                          aria-hidden="true"
+                        />
+
+                        {/* 2. Main Image (Full Visibility) */}
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
                           sizes="(max-width: 760px) 100vw, 50vw"
-                          className={`project-card-image ${project.imageFit === "contain" ? "fit-contain" : ""}`}
+                          className="project-card-image"
                         />
-
                         <div className="project-card-overlay" />
 
                         <span className="project-card-index">
@@ -425,12 +436,12 @@ export default function Projects() {
               </motion.p>
 
               <motion.div className="projects-cta-actions" variants={fadeUp}>
-                <Link href="/contact" className="cta-button">
+                <Link href="/contact" className="cta-button btn">
                   <span>Start a Project</span>
                   <ArrowUpRight size={18} strokeWidth={2} />
                 </Link>
 
-                <Link href="/team" className="cta-link">
+                <Link href="/team" className="cta-link btn">
                   <span>Meet the Team</span>
                   <ArrowUpRight size={18} />
                 </Link>

@@ -42,7 +42,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
-import "./home.css";
+import "./globals.css";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -456,12 +456,12 @@ export default function Home() {
               </motion.p>
 
               <motion.div className="hero-actions" variants={fadeUp}>
-                <Link href="/projects" className="hero-primary">
+                <Link href="/projects" className="hero-primary btn">
                   <span>Explore our work</span>
                   <ArrowUpRight size={18} strokeWidth={2} />
                 </Link>
 
-                <Link href="/contact" className="hero-secondary">
+                <Link href="/contact" className="hero-secondary btn">
                   <span>Start a conversation</span>
                   <ArrowUpRight size={18} strokeWidth={2} />
                 </Link>
@@ -496,26 +496,27 @@ export default function Home() {
               <div className="hero-image-frame">
                 <Image
                   src="/images/hero-tech.png"
+                  alt=""
+                  fill
+                  className="hero-image-bg"
+                  aria-hidden="true"
+                />
+
+                <Image
+                  src="/images/hero-tech.png"
                   alt="AJ Technologies AI workspace"
                   fill
                   priority
                   sizes="(max-width: 1050px) 100vw, 620px"
                   className="hero-image"
                 />
+
                 <div className="hero-image-overlay" />
                 <div className="hero-scan" />
-
                 <div className="hero-corner hero-corner-tl" />
                 <div className="hero-corner hero-corner-tr" />
                 <div className="hero-corner hero-corner-bl" />
                 <div className="hero-corner hero-corner-br" />
-
-                <div className="hero-image-label">
-                  <span>
-                    <i /> SYSTEM STATUS
-                  </span>
-                  <strong>INTELLIGENT · ONLINE</strong>
-                </div>
               </div>
 
               <motion.div
@@ -624,16 +625,22 @@ export default function Home() {
               </motion.div>
 
               <motion.div
-                className="intro-orbit"
-                initial={{ opacity: 0, scale: 0.8 }}
+                className="intro-visual"
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={viewport}
                 transition={{ duration: 0.9, ease }}
               >
-                <div className="intro-orbit-ring ring-a" />
-                <div className="intro-orbit-ring ring-b" />
-                <div className="intro-orbit-core">
-                  <Sparkles size={24} strokeWidth={1.6} />
+                <div className="intro-visual-glow" />
+                <div className="intro-visual-frame">
+                  <Image
+                    src="/images/who-we-are.png"
+                    alt="AJ Technologies"
+                    fill
+                    sizes="(max-width: 1050px) 100vw, 420px"
+                    className="intro-visual-image"
+                    priority
+                  />
                 </div>
               </motion.div>
             </div>
@@ -651,7 +658,7 @@ export default function Home() {
                 ["03", "Progress", "Every product should keep evolving."],
               ].map(([number, title, text]) => (
                 <motion.div
-                  className="value-card"
+                  className="value-card card"
                   key={number}
                   variants={fadeUp}
                 >
@@ -723,7 +730,7 @@ export default function Home() {
                 const Icon = service.icon;
                 return (
                   <motion.article
-                    className="service-card"
+                    className="service-card card"
                     key={service.number}
                     variants={fadeUp}
                   >
@@ -823,11 +830,11 @@ export default function Home() {
                 </motion.div>
 
                 <motion.div className="flagship-actions" variants={fadeUp}>
-                  <Link href="/projects" className="flagship-primary">
+                  <Link href="/projects" className="flagship-primary btn">
                     <span>Explore the product</span>
                     <ArrowUpRight size={18} strokeWidth={2} />
                   </Link>
-                  <Link href="/contact" className="flagship-secondary">
+                  <Link href="/contact" className="flagship-secondary btn">
                     <span>Request a demo</span>
                     <ArrowRight size={18} strokeWidth={2} />
                   </Link>
@@ -846,13 +853,34 @@ export default function Home() {
                 <div className="flagship-orbit orbit-b" />
 
                 <div className="flagship-image-frame">
-                  <Image
-                    src="/images/AJ HealthCloud Dental AI Network.png"
-                    alt="AJ HealthCloud — AI-assisted dental clinic management platform"
-                    fill
-                    sizes="(max-width: 1050px) 100vw, 640px"
-                    className="flagship-image"
-                  />
+                  {/* 1. Blurred background video */}
+                  <video
+                    className="flagship-video-bg"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-hidden="true"
+                    tabIndex={-1}
+                  >
+                    <source src="/videos/flagship-loop.mp4" type="video/mp4" />
+                  </video>
+
+                  {/* 2. Main crisp video */}
+                  <video
+                    className="flagship-video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    poster="/images/AJ HealthCloud Dental AI Network.png"
+                    aria-label="AJ HealthCloud — AI-assisted dental clinic management platform"
+                  >
+                    <source src="/videos/flagship-loop.mp4" type="video/mp4" />
+                  </video>
+
+                  {/* Keep your overlays exactly as they are */}
                   <div className="flagship-image-overlay" />
                   <div className="flagship-scan" />
 
@@ -891,10 +919,6 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.45, ease }}
                 >
                   <Sparkle size={17} />
-                  <div>
-                    <span>AI WORKFLOWS</span>
-                    <strong>Dentist-approved</strong>
-                  </div>
                 </motion.div>
               </motion.div>
             </div>
@@ -910,7 +934,7 @@ export default function Home() {
                 const Icon = feature.icon;
                 return (
                   <motion.article
-                    className="flagship-feature-card"
+                    className="flagship-feature-card card"
                     key={feature.title}
                     variants={fadeUp}
                   >
@@ -979,7 +1003,7 @@ export default function Home() {
                 const Icon = service.icon;
                 return (
                   <motion.article
-                    className="social-card"
+                    className="social-card card"
                     key={service.number}
                     variants={fadeUp}
                   >
@@ -1040,7 +1064,7 @@ export default function Home() {
             >
               <button
                 type="button"
-                className="social-cta"
+                className="social-cta btn"
                 onClick={() => setSocialModalOpen(true)}
               >
                 <span>Explore Social Services</span>
@@ -1102,7 +1126,7 @@ export default function Home() {
                 const Icon = service.icon;
                 return (
                   <motion.article
-                    className="graphics-card"
+                    className="graphics-card card"
                     key={service.number}
                     variants={fadeUp}
                   >
@@ -1131,7 +1155,7 @@ export default function Home() {
                 const Icon = item.icon;
                 return (
                   <motion.div
-                    className="graphics-proof-card"
+                    className="graphics-proof-card card"
                     key={item.title}
                     variants={fadeUp}
                   >
@@ -1154,7 +1178,7 @@ export default function Home() {
             >
               <button
                 type="button"
-                className="graphics-cta"
+                className="graphics-cta btn"
                 onClick={() => setGraphicsModalOpen(true)}
               >
                 <span>Explore Graphics Services</span>
@@ -1209,7 +1233,11 @@ export default function Home() {
                 viewport={viewport}
               >
                 {capabilities.map((item) => (
-                  <motion.span key={item} variants={fadeUp}>
+                  <motion.span
+                    className="btn-pill"
+                    key={item}
+                    variants={fadeUp}
+                  >
                     {item}
                   </motion.span>
                 ))}
@@ -1371,7 +1399,7 @@ export default function Home() {
                   const Icon = reason.icon;
                   return (
                     <motion.div
-                      className="reason-card"
+                      className="reason-card card"
                       key={reason.number}
                       variants={fadeUp}
                     >
@@ -1524,7 +1552,7 @@ export default function Home() {
               </motion.p>
 
               <motion.div variants={fadeUp}>
-                <Link href="/contact" className="cta-button">
+                <Link href="/contact" className="cta-button btn">
                   <span>Start a Project</span>
                   <ArrowUpRight size={18} strokeWidth={2} />
                 </Link>
@@ -1581,7 +1609,10 @@ export default function Home() {
                     {socialServices.map((s) => {
                       const Icon = s.icon;
                       return (
-                        <div className="social-modal-service" key={s.number}>
+                        <div
+                          className="social-modal-service card"
+                          key={s.number}
+                        >
                           <div className="social-modal-service-icon">
                             <Icon size={20} strokeWidth={1.8} />
                           </div>
@@ -1636,7 +1667,10 @@ export default function Home() {
                     {socialPlatformTypes.map((type) => {
                       const Icon = type.icon;
                       return (
-                        <div className="social-modal-platform" key={type.title}>
+                        <div
+                          className="social-modal-platform card"
+                          key={type.title}
+                        >
                           <div className="social-modal-platform-icon">
                             <Icon size={20} strokeWidth={1.8} />
                           </div>
@@ -1653,7 +1687,7 @@ export default function Home() {
                   <div className="social-modal-process">
                     {socialProcess.map((step, index) => (
                       <div
-                        className="social-modal-process-step"
+                        className="social-modal-process-step card"
                         key={step.number}
                       >
                         <div className="social-modal-process-head">
@@ -1668,7 +1702,7 @@ export default function Home() {
                 </div>
 
                 <div className="social-modal-cta">
-                  <Link href="/contact" className="social-modal-button">
+                  <Link href="/contact" className="social-modal-button btn">
                     <span>Start a Project</span>
                     <ArrowUpRight size={17} strokeWidth={2} />
                   </Link>
@@ -1775,7 +1809,7 @@ export default function Home() {
                   <div className="social-modal-process">
                     {graphicsProcess.map((step, index) => (
                       <div
-                        className="social-modal-process-step"
+                        className="social-modal-process-step card"
                         key={step.number}
                       >
                         <div className="social-modal-process-head">
@@ -1790,7 +1824,7 @@ export default function Home() {
                 </div>
 
                 <div className="social-modal-cta">
-                  <Link href="/contact" className="social-modal-button">
+                  <Link href="/contact" className="social-modal-button btn">
                     <span>Start a Project</span>
                     <ArrowUpRight size={17} strokeWidth={2} />
                   </Link>

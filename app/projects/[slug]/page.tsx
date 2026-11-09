@@ -105,14 +105,15 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      {(prev || next) && (
+      
+            {(prev || next) && (
         <section className="project-detail-nav">
           <div className="section-container">
             <div className="project-detail-nav-inner">
               {prev && (
                 <Link
                   href={`/projects/${prev.slug}`}
-                  className="project-detail-nav-link prev"
+                  className="project-detail-nav-link btn"
                 >
                   <span className="project-detail-nav-label">
                     <ArrowLeft size={14} />
@@ -125,7 +126,7 @@ export default async function ProjectPage({
               {next && (
                 <Link
                   href={`/projects/${next.slug}`}
-                  className="project-detail-nav-link next"
+                  className="project-detail-nav-link btn"
                 >
                   <span className="project-detail-nav-label">
                     Next

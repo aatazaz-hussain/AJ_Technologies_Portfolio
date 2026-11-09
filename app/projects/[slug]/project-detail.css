@@ -1,6 +1,10 @@
+/* ============================================================
+   PROJECT DETAIL PAGE — LIGHT THEME
+   ============================================================ */
+
 .project-detail-page {
-  background: #030b18;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   overflow: hidden;
 }
 
@@ -11,6 +15,41 @@
   z-index: 2;
 }
 
+/* ---------- HEADING HOVER ---------- */
+.project-detail-page h1,
+.project-detail-page h2 {
+  transition: color 0.35s ease, letter-spacing 0.35s ease, transform 0.35s ease;
+  color: #011e66;
+}
+.project-detail-page h1:hover,
+.project-detail-page h2:hover {
+  transform: scale(1.012);
+  letter-spacing: -0.055em;
+  color: #0130b0;
+}
+
+/* ---------- PARAGRAPH HOVER ---------- */
+.project-detail-page p {
+  color: #000000;
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+.project-detail-page p:hover {
+  color: #0130b0 !important;
+  letter-spacing: 0.005em;
+}
+.project-detail-page p strong,
+.project-detail-page p b {
+  color: #0130b0;
+  font-weight: 700;
+  display: inline-block;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.project-detail-page p:hover strong,
+.project-detail-page p:hover b {
+  color: #011e66 !important;
+  transform: scale(1.03);
+}
+
 /* ============ HERO ============ */
 
 .project-detail-hero {
@@ -18,21 +57,17 @@
   overflow: hidden;
   padding: 0 0 70px;
   background:
-    radial-gradient(
-      circle at 78% 40%,
-      rgba(8, 124, 255, 0.16),
-      transparent 32%
-    ),
-    #030b18;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    radial-gradient(circle at 78% 40%, rgba(1, 48, 176, 0.06), transparent 32%),
+    #ffffff;
+  border-bottom: 1px solid rgba(1, 30, 102, 0.08);
 }
 
 .project-detail-hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(1, 30, 102, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 30, 102, 0.06) 1px, transparent 1px);
   background-size: 58px 58px;
   mask-image: linear-gradient(to bottom, black, transparent 95%);
   -webkit-mask-image: linear-gradient(to bottom, black, transparent 95%);
@@ -46,7 +81,7 @@
   right: 6%;
   top: 10%;
   border-radius: 50%;
-  background: rgba(8, 124, 255, 0.12);
+  background: rgba(1, 48, 176, 0.08);
   filter: blur(60px);
   pointer-events: none;
 }
@@ -55,7 +90,7 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  color: #1684ff;
+  color: #0130b0;
   font-size: 13.5px;
   font-weight: 750;
   text-decoration: none;
@@ -66,7 +101,7 @@
 }
 
 .project-detail-back:hover {
-  color: #66b0ff;
+  color: #011e66;
   transform: translateX(-4px);
 }
 
@@ -79,14 +114,14 @@
 
 .project-detail-hero-visual {
   position: relative;
-  aspect-ratio: 16 / 9; /* Changed from 16/7 to 16/9 so it's not too wide */
+  aspect-ratio: 16 / 9;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(67, 157, 255, 0.28);
-  background: #071223; /* Added: Dark background matching the theme */
+  border: 1px solid #0130b0;
+  background: #ffffff;
   box-shadow:
-    -20px 25px 80px rgba(0, 0, 0, 0.45),
-    0 0 60px rgba(8, 124, 255, 0.1);
+    -20px 25px 80px rgba(1, 30, 102, 0.15),
+    0 0 60px rgba(1, 48, 176, 0.08);
 }
 
 .project-detail-hero-image {
@@ -99,8 +134,8 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(3, 11, 24, 0.05),
-    rgba(3, 11, 24, 0.6)
+    rgba(1, 30, 102, 0),
+    rgba(1, 30, 102, 0.2)
   );
   pointer-events: none;
 }
@@ -113,9 +148,9 @@
   display: inline-flex;
   align-items: center;
   padding: 6px 11px;
-  color: #ffffff;
-  background: rgba(3, 11, 24, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #011e66;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(1, 30, 102, 0.18);
   border-radius: 6px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -134,10 +169,10 @@
   width: 40px;
   height: 40px;
   color: #ffffff;
-  background: rgba(8, 124, 255, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #0130b0;
+  border: 1px solid #011e66;
   border-radius: 9px;
-  box-shadow: 0 8px 24px rgba(8, 124, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(1, 48, 176, 0.3);
 }
 
 .project-detail-hero-copy h1 {
@@ -146,15 +181,16 @@
   line-height: 1;
   letter-spacing: -0.05em;
   font-weight: 750;
+  color: #011e66;
 }
 
 .project-detail-category {
   display: inline-block;
   padding: 6px 12px;
-  color: #1684ff;
-  border: 1px solid rgba(22, 132, 255, 0.35);
+  color: #0130b0;
+  border: 1px solid #0130b0;
   border-radius: 6px;
-  background: rgba(22, 132, 255, 0.08);
+  background: #ffffff;
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.2em;
@@ -164,7 +200,7 @@
 .project-detail-tagline {
   max-width: 580px;
   margin: 0 0 14px;
-  color: #ffffff;
+  color: #011e66;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.55;
@@ -174,42 +210,28 @@
 .project-detail-hero-copy p {
   max-width: 580px;
   margin: 0 0 24px;
-  color: #a5b3c8;
   font-size: 16.5px;
   line-height: 1.75;
 }
 
+/* The .btn class will handle the hover state from here */
 .project-detail-github {
   display: inline-flex;
   align-items: center;
   gap: 9px;
   padding: 13px 19px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 8px;
   font-size: 14px;
   font-weight: 750;
   text-decoration: none;
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.project-detail-github:hover {
-  background: rgba(22, 132, 255, 0.16);
-  border-color: rgba(22, 132, 255, 0.5);
-  transform: translateY(-2px);
 }
 
 /* ============ BODY — GRID OF BLOCKS ============ */
 
 .project-detail-body {
   padding: 80px 0;
-  background: #071223;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #f7f9fc;
+  border-top: 1px solid rgba(1, 30, 102, 0.08);
+  border-bottom: 1px solid rgba(1, 30, 102, 0.08);
 }
 
 .project-blocks-grid {
@@ -220,55 +242,23 @@
   margin: 0 auto;
 }
 
+/* The .card class handles the base look. Only layout/padding here. */
 .project-block {
-  position: relative;
   padding: 30px 32px 32px;
-  border: 1px solid rgba(255, 255, 255, 0.075);
-  border-radius: 14px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.035),
-    rgba(255, 255, 255, 0.01)
-  );
-  transition:
-    border-color 0.35s ease,
-    background 0.35s ease;
-}
-
-.project-block:hover {
-  border-color: rgba(22, 132, 255, 0.4);
-  background: linear-gradient(
-    145deg,
-    rgba(22, 132, 255, 0.075),
-    rgba(255, 255, 255, 0.015)
-  );
 }
 
 .project-block.block-full {
   grid-column: 1 / -1;
 }
 
+/* Keep highlight visible but integrated with card theme */
 .project-block.block-highlight {
-  border-color: rgba(22, 132, 255, 0.35);
-  background: linear-gradient(
-    145deg,
-    rgba(22, 132, 255, 0.1),
-    rgba(255, 255, 255, 0.015)
-  );
-}
-
-.project-block.block-highlight:hover {
-  border-color: rgba(22, 132, 255, 0.6);
-  background: linear-gradient(
-    145deg,
-    rgba(22, 132, 255, 0.14),
-    rgba(255, 255, 255, 0.02)
-  );
+  box-shadow: inset 0 0 0 1px #0130b0, 0 0 15px rgba(1, 48, 176, 0.1);
 }
 
 .block-number {
   display: inline-block;
-  color: #1684ff;
+  color: #0130b0;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.22em;
@@ -277,7 +267,7 @@
 
 .block-label {
   display: block;
-  color: #1684ff;
+  color: #0130b0;
   font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 0.24em;
@@ -287,7 +277,7 @@
 
 .block-text {
   margin: 0;
-  color: #cbd5e4;
+  color: #000000;
   font-size: 16px;
   line-height: 1.75;
 }
@@ -295,36 +285,14 @@
 .block-text-lg {
   font-size: 17.5px;
   line-height: 1.78;
-  color: #d5deeb;
+  color: #000000;
 }
 
 /* Tag rows (features / deliverables) */
-
 .block-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
-}
-
-.block-tags span {
-  padding: 9px 13px;
-  color: #a5b3c8;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.025);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition:
-    color 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
-}
-
-.block-tags span:hover {
-  color: #ffffff;
-  border-color: rgba(22, 132, 255, 0.5);
-  background: rgba(22, 132, 255, 0.08);
 }
 
 .block-deliverables {
@@ -333,32 +301,10 @@
   gap: 9px;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.block-deliverables span {
-  padding: 9px 13px;
-  color: #cbd5e4;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.03);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition:
-    color 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
-}
-
-.block-deliverables span:hover {
-  color: #ffffff;
-  border-color: rgba(22, 132, 255, 0.5);
-  background: rgba(22, 132, 255, 0.1);
+  border-top: 1px solid rgba(1, 30, 102, 0.1);
 }
 
 /* Technology tags with icons */
-
 .block-tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -370,23 +316,6 @@
   align-items: center;
   gap: 9px;
   padding: 8px 14px 8px 10px;
-  color: #ffffff;
-  border: 1px solid rgba(22, 132, 255, 0.3);
-  border-radius: 8px;
-  background: rgba(22, 132, 255, 0.08);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition:
-    border-color 0.3s ease,
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.project-detail-page .block-tech-tag:hover {
-  border-color: rgba(22, 132, 255, 0.6);
-  background: rgba(22, 132, 255, 0.14);
-  transform: translateY(-2px);
 }
 
 .project-detail-page .block-tech-icon {
@@ -395,16 +324,16 @@
   width: 22px;
   height: 22px;
   flex-shrink: 0;
-  color: #1684ff;
+  color: #0130b0;
+  transition: color 0.3s ease;
+}
+
+.project-detail-page .block-tech-tag:hover .block-tech-icon {
+  color: #ffffff;
 }
 
 .project-detail-page .block-tech-icon-si {
-  color: #ffffff;
   font-size: 15px;
-}
-
-.project-detail-page .block-tech-icon-lucide {
-  color: #1684ff;
 }
 
 .project-detail-page .block-tech-label {
@@ -415,7 +344,7 @@
 
 .project-detail-nav {
   padding: 60px 0 80px;
-  background: #030b18;
+  background: #ffffff;
 }
 
 .project-detail-nav-inner {
@@ -426,88 +355,56 @@
   flex-wrap: wrap;
 }
 
+/* 
+  The .btn class handles the height, border, text-color, 
+  and hover background from your global styles. 
+*/
 .project-detail-nav-link {
-  position: relative;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
-  gap: 10px;
-  min-width: 240px;
-  max-width: 420px;
-  padding: 22px 26px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.018);
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  height: auto !important;
+  min-height: 51px;
+  padding: 16px 24px !important;
   text-decoration: none;
-  color: #ffffff;
-  overflow: hidden;
-  transition:
-    border-color 0.35s ease,
-    background 0.35s ease,
-    transform 0.35s ease;
-}
-
-.project-detail-nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(22, 132, 255, 0.6),
-    rgba(22, 132, 255, 0)
-  );
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.project-detail-nav-link:hover {
-  border-color: rgba(22, 132, 255, 0.5);
-  background: rgba(22, 132, 255, 0.07);
-}
-
-.project-detail-nav-link:hover::after {
-  opacity: 1;
-}
-
-.project-detail-nav-link.prev:hover {
-  transform: translateX(-4px);
+  max-width: 420px;
+  white-space: normal !important; /* Allows long project titles to wrap */
 }
 
 .project-detail-nav-link.next {
-  text-align: right;
   align-items: flex-end;
-}
-
-.project-detail-nav-link.next::after {
-  background: linear-gradient(
-    90deg,
-    rgba(22, 132, 255, 0),
-    rgba(22, 132, 255, 0.6)
-  );
-}
-
-.project-detail-nav-link.next:hover {
-  transform: translateX(4px);
+  text-align: right;
 }
 
 .project-detail-nav-label {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #1684ff;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  color: inherit;
+  opacity: 0.8;
+  transition: color 0.3s ease;
 }
 
 .project-detail-nav-link strong {
-  font-size: 20px;
-  letter-spacing: -0.025em;
+  font-size: 18px;
+  letter-spacing: -0.02em;
   font-weight: 700;
   line-height: 1.2;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* Make text white on hover just like the .btn base */
+.project-detail-nav-link:hover .project-detail-nav-label,
+.project-detail-nav-link:hover strong {
+  color: #ffffff !important;
+  opacity: 1;
 }
 
 /* ============ RESPONSIVE ============ */
@@ -554,14 +451,16 @@
     height: auto;
     padding-top: 20px;
     padding-bottom: 20px;
-    background: #071223;
+    background: #f7f9fc;
   }
+  
   .project-detail-hero-image {
-    position: relative !important; /* Override the 'fill' absolute positioning */
+    position: relative !important;
     width: 100%;
     height: auto;
-    object-fit: contain; /* Shows 100% of the image, no side crop */
+    object-fit: contain;
   }
+  
   .project-detail-body {
     padding: 45px 0;
   }
@@ -584,7 +483,6 @@
 
   .project-detail-nav-inner {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .project-detail-nav-link {
@@ -596,14 +494,6 @@
   .project-detail-nav-link.next {
     text-align: left;
     align-items: flex-start;
-  }
-
-  .project-detail-nav-link.next::after {
-    background: linear-gradient(
-      90deg,
-      rgba(22, 132, 255, 0.6),
-      rgba(22, 132, 255, 0)
-    );
   }
 }
 

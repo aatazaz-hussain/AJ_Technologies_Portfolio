@@ -115,12 +115,12 @@ export default function Team() {
               </motion.div>
 
               <motion.div className="team-hero-actions" variants={fadeUp}>
-                <Link href="/contact" className="hero-primary">
+                <Link href="/contact" className="hero-primary btn">
                   <span>Work With Us</span>
                   <ArrowUpRight size={17} strokeWidth={2} />
                 </Link>
 
-                <Link href="/projects" className="hero-secondary">
+                <Link href="/projects" className="hero-secondary btn">
                   <span>Explore Our Work</span>
                   <ArrowUpRight size={17} strokeWidth={2} />
                 </Link>
@@ -137,7 +137,17 @@ export default function Team() {
               <div className="visual-orbit orbit-one" />
               <div className="visual-orbit orbit-two" />
 
-              <div className="hero-image-frame">
+                            <div className="hero-image-frame">
+                {/* 1. Blurred Background */}
+                <Image
+                  src="/images/team-hero.png"
+                  alt=""
+                  fill
+                  className="hero-image-bg"
+                  aria-hidden="true"
+                />
+                
+                {/* 2. Main Image (Full Visibility) */}
                 <Image
                   src="/images/team-hero.png"
                   alt="Abstract constellation of connected glowing nodes representing the AJ Technologies team"
@@ -153,13 +163,6 @@ export default function Team() {
                 <div className="hero-corner hero-corner-tr" />
                 <div className="hero-corner hero-corner-bl" />
                 <div className="hero-corner hero-corner-br" />
-
-                <div className="hero-image-label">
-                  <span>
-                    <i /> CORE TEAM
-                  </span>
-                  <strong>LEADERSHIP · BUILDING</strong>
-                </div>
               </div>
 
               <motion.div
@@ -249,19 +252,21 @@ export default function Team() {
                 </motion.p>
               </motion.div>
 
+              {/* ✅ Replaced Orbit with Image Frame */}
               <motion.div
-                className="team-intro-orbit"
-                initial={{ opacity: 0, scale: 0.8 }}
+                className="team-intro-image-frame"
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={viewport}
                 transition={{ duration: 0.9, ease }}
               >
-                <div className="orbit-ring orbit-ring-a" />
-                <div className="orbit-ring orbit-ring-b" />
-                <div className="orbit-ring orbit-ring-c" />
-                <div className="orbit-core">
-                  <Sparkles size={26} strokeWidth={1.6} />
-                </div>
+                <Image
+                  src="/images/team-intro.png" // 👈 Add your image to public/images/
+                  alt="AJ Technologies Leadership"
+                  fill
+                  sizes="(max-width: 1050px) 100vw, 300px"
+                  className="team-intro-image"
+                />
               </motion.div>
             </div>
           </div>
@@ -391,7 +396,7 @@ export default function Team() {
                 },
               ].map((item) => (
                 <motion.div
-                  className="value-card"
+                  className="value-card card"
                   key={item.number}
                   variants={fadeUp}
                 >
@@ -448,12 +453,12 @@ export default function Team() {
               </motion.p>
 
               <motion.div className="team-cta-actions" variants={fadeUp}>
-                <Link href="/contact" className="cta-button">
+                <Link href="/contact" className="cta-button btn">
                   <span>Start a Project</span>
                   <ArrowUpRight size={18} strokeWidth={2} />
                 </Link>
 
-                <Link href="/projects" className="cta-link">
+                <Link href="/projects" className="cta-link btn">
                   <span>Explore Our Work</span>
                   <ArrowUpRight size={18} />
                 </Link>

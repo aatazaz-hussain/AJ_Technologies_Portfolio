@@ -221,7 +221,7 @@ export default function Contact() {
                   href="https://wa.me/923260666521"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hero-primary"
+                  className="hero-primary btn"
                 >
                   <WhatsappIcon size={17} />
                   <span>Message on WhatsApp</span>
@@ -229,7 +229,7 @@ export default function Contact() {
 
                 <a
                   href="mailto:ajtechnologies.ai@gmail.com"
-                  className="hero-secondary"
+                  className="hero-secondary btn"
                 >
                   <Mail size={17} />
                   <span>Send an Email</span>
@@ -247,7 +247,15 @@ export default function Contact() {
               <div className="visual-orbit orbit-one" />
               <div className="visual-orbit orbit-two" />
 
-              <div className="hero-image-frame">
+                            <div className="hero-image-frame">
+                <Image
+                  src="/images/contact-hero.png"
+                  alt=""
+                  fill
+                  className="hero-image-bg"
+                  aria-hidden="true"
+                />
+                
                 <Image
                   src="/images/contact-hero.png"
                   alt="Abstract transmission signal representing connection with AJ Technologies"
@@ -263,13 +271,6 @@ export default function Contact() {
                 <div className="hero-corner hero-corner-tr" />
                 <div className="hero-corner hero-corner-bl" />
                 <div className="hero-corner hero-corner-br" />
-
-                <div className="hero-image-label">
-                  <span>
-                    <i /> OPEN CHANNEL
-                  </span>
-                  <strong>REPLY · WITHIN 24H</strong>
-                </div>
               </div>
 
               <motion.div
@@ -316,9 +317,24 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.h2 variants={fadeUp}>
-                  <span>Tell us about</span>
-                  <br />
-                  what you're building.
+                  <span className="reveal-mask">
+                    <motion.span
+                      className="reveal-line"
+                      variants={fadeUp}
+                      style={{ display: "block" }}
+                    >
+                      <span>Tell us about</span>
+                    </motion.span>
+                  </span>
+                  <span className="reveal-mask">
+                    <motion.span
+                      className="reveal-line"
+                      variants={fadeUp}
+                      style={{ display: "block" }}
+                    >
+                      what you're building.
+                    </motion.span>
+                  </span>
                 </motion.h2>
 
                 <motion.p className="contact-form-intro" variants={fadeUp}>
@@ -408,7 +424,7 @@ export default function Contact() {
 
                   <motion.button
                     type="submit"
-                    className={`form-submit ${state.succeeded ? "submitted" : ""}`}
+                    className={`form-submit btn ${state.succeeded ? "submitted" : ""}`}
                     whileHover={state.submitting ? {} : { y: -4 }}
                     whileTap={state.submitting ? {} : { scale: 0.98 }}
                     disabled={state.submitting || state.succeeded}
@@ -468,7 +484,7 @@ export default function Contact() {
                             ? "noopener noreferrer"
                             : undefined
                         }
-                        className="info-card"
+                        className="info-card card"
                         variants={fadeUp}
                       >
                         <div className="info-card-icon">
@@ -550,7 +566,7 @@ export default function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="social-card"
+                    className="social-card card"
                     variants={fadeUp}
                   >
                     <div className="social-card-top">
@@ -617,13 +633,13 @@ export default function Contact() {
                   href="https://wa.me/923260666521"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-button"
+                  className="cta-button btn"
                 >
                   <WhatsappIcon size={18} />
                   <span>Chat on WhatsApp</span>
                 </a>
 
-                <Link href="/projects" className="cta-link">
+                <Link href="/projects" className="cta-link btn">
                   <span>Explore Our Work</span>
                   <ArrowUpRight size={18} />
                 </Link>

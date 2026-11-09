@@ -33,46 +33,46 @@ export default function ProjectBlocks({
       whileInView="show"
       viewport={viewport}
     >
-      <motion.div className="project-block block-full" variants={fadeUp}>
+      <motion.div className="project-block card block-full" variants={fadeUp}>
         <span className="block-number">01</span>
         <span className="block-label">OVERVIEW</span>
         <p className="block-text block-text-lg">{project.overview}</p>
       </motion.div>
 
-      <motion.div className="project-block" variants={fadeUp}>
+      <motion.div className="project-block card" variants={fadeUp}>
         <span className="block-number">02</span>
         <span className="block-label">PROBLEM</span>
         <p className="block-text">{project.problem}</p>
       </motion.div>
 
-      <motion.div className="project-block" variants={fadeUp}>
+      <motion.div className="project-block card" variants={fadeUp}>
         <span className="block-number">03</span>
         <span className="block-label">SOLUTION</span>
         <p className="block-text">{project.solution}</p>
       </motion.div>
 
-      <motion.div className="project-block block-full" variants={fadeUp}>
+      <motion.div className="project-block card block-full" variants={fadeUp}>
         <span className="block-number">04</span>
         <span className="block-label">OUR ROLE</span>
         <p className="block-text">{project.role}</p>
         <div className="block-deliverables">
           {project.deliverables.map((d) => (
-            <span key={d}>{d}</span>
+            <span key={d} className="btn-pill">{d}</span>
           ))}
         </div>
       </motion.div>
 
-      <motion.div className="project-block" variants={fadeUp}>
+      <motion.div className="project-block card" variants={fadeUp}>
         <span className="block-number">05</span>
         <span className="block-label">KEY FEATURES</span>
         <div className="block-tags">
           {project.features.map((f) => (
-            <span key={f}>{f}</span>
+            <span key={f} className="btn-pill">{f}</span>
           ))}
         </div>
       </motion.div>
 
-      <motion.div className="project-block" variants={fadeUp}>
+      <motion.div className="project-block card" variants={fadeUp}>
         <span className="block-number">06</span>
         <span className="block-label">TECHNOLOGY</span>
         <div className="block-tech-tags">
@@ -82,13 +82,13 @@ export default function ProjectBlocks({
         </div>
       </motion.div>
 
-      <motion.div className="project-block block-highlight" variants={fadeUp}>
+      <motion.div className="project-block card block-highlight" variants={fadeUp}>
         <span className="block-number">07</span>
         <span className="block-label">OUTCOME</span>
         <p className="block-text">{project.outcome}</p>
       </motion.div>
 
-      <motion.div className="project-block" variants={fadeUp}>
+      <motion.div className="project-block card" variants={fadeUp}>
         <span className="block-number">08</span>
         <span className="block-label">PURPOSE</span>
         <p className="block-text">{project.purpose}</p>

@@ -5,7 +5,7 @@
   right: 0;
   z-index: 100;
   height: 88px;
-  background: #dde5f0;
+  background: #ffffff;
   border-bottom: 1px solid rgba(10, 26, 74, 0.12);
   box-shadow: 0 4px 20px rgba(10, 26, 74, 0.08);
   transition:
@@ -62,7 +62,7 @@
   display: inline-flex;
   align-items: center;
   padding: 9px 16px;
-  color: #3f4f6b;
+  color: #0130B0;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.005em;
@@ -93,8 +93,8 @@
 }
 
 .nav-link:hover {
-  color: #0a1a4a;
-  background: rgba(255, 255, 255, 0.55);
+  background: #0130B0;
+  color:#ffffff
 }
 
 .nav-link:hover::after {
@@ -102,12 +102,16 @@
 }
 
 .nav-link.active {
-  color: #0a1a4a;
+  color: #011E66;
 }
 
 .nav-link.active::after {
   transform: scaleX(1);
   box-shadow: 0 0 12px rgba(8, 124, 255, 0.5);
+}
+.nav-link.active:hover {
+  color:#ffffff;
+  background: #0130B0;
 }
 
 .nav-cta {
@@ -118,8 +122,8 @@
   padding: 0 20px;
   margin-left: 18px;
   color: #ffffff;
-  background: #087cff;
-  border: 1px solid #087cff;
+  background: #0130B0;
+  border: 1px solid #011E66;
   border-radius: 9px;
   font-size: 13.5px;
   font-weight: 750;
@@ -139,8 +143,8 @@
 
 .nav-cta:hover {
   transform: translateY(-3px);
-  background: #1688ff;
-  box-shadow: 0 16px 40px rgba(8, 124, 255, 0.4);
+  background: #011E66;
+  box-shadow: 0 16px 40px #0130B0;
 }
 
 .nav-cta:hover svg {
@@ -155,7 +159,7 @@
   justify-content: center;
   width: 42px;
   height: 42px;
-  color: #0a1a4a;
+  color: #0130B0;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(10, 26, 74, 0.14);
   border-radius: 9px;
